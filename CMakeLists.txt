@@ -17,6 +17,7 @@ set(CHAPTERS
     chapters/synchronmaschine.tex
     chapters/asynchronmaschine.tex
     chapters/universalmaschine.tex
+    chapters/entwurf.tex
 )
 
 set(DRAWINGS
@@ -41,6 +42,8 @@ set(DRAWINGS
     drawings/universalmaschine/esb_uvm.tex
     drawings/universalmaschine/zeiger_uvm_stromortskurve.tex
     drawings/universalmaschine/zeiger_uvm.tex
+    drawings/entwurf/bruchlochwicklung.tex
+    drawings/entwurf/nutstern.tex
 )
 
 set(IMAGES
