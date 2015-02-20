@@ -12,11 +12,11 @@ Public Version: [latex4ei.de](http://latex4ei.de)
 
 --------------------------------------
 
-### Upstream Repository: [FS-EM](https://github.com/MaKeAppDev/FS-EM)
+### Upstream Repository: [FS-EKM](https://github.com/MaKeAppDev/FS-EKM)
 
 add upstream:
 
-    git remote add upstream git@github.com:MaKeAppDev/FS-EM.git
+    git remote add upstream git@github.com:MaKeAppDev/FS-EKM.git
 
 pull from upstream:
 
