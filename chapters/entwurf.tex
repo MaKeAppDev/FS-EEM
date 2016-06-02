@@ -1,9 +1,7 @@
 \section{Entwurf elektrischer Maschinen}
-\sectionbox{
+\begin{sectionbox}
 \subsection{Größen}
-\tablebox{
-\begin{tabular*}{\columnwidth}{p{4,5cm}cc}
-\ctrule
+\begin{tablebox}{p{4,5cm}cc}
 Essonziffer & $C$ & $\unitof{\si{\tesla\ampere\per\meter}}$\\
 ideeler Polbogenwinkel & $\beta_{pi}$ & $\unitof{\si{\radian}}$\\
 ideele Polbogenlänge & $b_{pi}$ & $\unitof{\si{\meter}}$\\
@@ -11,21 +9,20 @@ Rotorstrombelag & $A_2$ & $\unitof{\si{\ampere\per\meter}}$\\
 mittlerer Statorstrombelag & $\overline{A}_1$ & $\unitof{\si{\ampere\per\meter}}$\\
 relative Länge & $\lambda$ & $\unitof{\si{1}}$\\
 Nutfüllfaktor (Stator) & $\kappa_{N1}$ & $\approx\num{0.5}$\\
-\cbrule
-\end{tabular*}
-}
+\end{tablebox}
 
 \subsection{Überblick Entwurfsprozess}
-\cookbox{Entwurfsprozess}{
+\begin{cookbox}{Entwurfsprozess}
 \item \textbf{Anforderungsprofil:} meist Nennleistung und Nenndrehzahl
 \item \textbf{Grobentwurf:} Hauptabmessungen, Wicklungsschema, Satorentwurf, Rotorentwurf
 \item \textbf{Nachrechnung:} Berechnung über analytische Gleichungen (FEM)
 \item \textbf{Optimierung:} Anpassung des Grobentwurfs
-}
-}
-\sectionbox{
+\end{cookbox}
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsection{Grobentwurf}
-\cookbox{Grobentwurf}{
+\begin{cookbox}{Grobentwurf}
 \item Drehmoment im Nennbetrieb aus $P$ und $n$ bestimmen
 \item Ankervolumen über $C$ bestimmen $P_{mi} = C\cdot D_\delta^2l_i\cdot n$
 \item Bestimmung des Ankerinnendurchmessers\\
@@ -35,17 +32,22 @@ indirekt über Ankervolumen
 \item Bestimmung des Wicklungsschemas
 \item Statorentwurf
 \item Rotorentwurf
-}
+\end{cookbox}
 
 \subsubsection{Drehmoment}
-\emphbox{$M_{D,N} = 2p\cdot\left(\frac{D_\delta}{2}\right)^2\cdot l_i\cdot\int\limits_0^{\frac{\pi}{p}}B_\delta(\vartheta_1,t)\cdot A_2(\vartheta_1,t)\diff\vartheta$}
+\begin{emphbox}
+	$M_{D,N} = 2p\cdot\left(\frac{D_\delta}{2}\right)^2\cdot l_i\cdot\int\limits_0^{\frac{\pi}{p}}B_\delta(\vartheta_1,t)\cdot A_2(\vartheta_1,t)\diff\vartheta$
+\end{emphbox}
 $\tau_p\cdot\beta_{pi} = b_{pi}$
-}
-\sectionbox{
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsubsection{Bestimmung des Innendurchmessers Gleichstrommaschine}
-\symbolbox{\begin{center}
-$C = \pi^2\beta_{pi}\cdot A_2\cdot B_{\delta,\text{max}}$
-\end{center}}
+\begin{symbolbox}
+	\begin{center}
+		$C = \pi^2\beta_{pi}\cdot A_2\cdot B_{\delta,\text{max}}$
+	\end{center}
+\end{symbolbox}
 $A_2 = 4w_2\frac{I_A}{2}\frac{1}{\pi D_\delta}$\\
 \[D_i = k_1 + k_2\cdot\sqrt[3]{\frac{p\cdot P_{mi}}{\lambda\cdot n}}\quad\text{mit}\begin{cases}
 k_1 = \SIrange{0.06}{0.08}{\meter}\\
@@ -53,35 +55,37 @@ k_2 = \numrange{0.42}{0.485}\frac{\si{\meter}}{\sqrt[3]{\si{\kilo\watt\minute}}}
 \end{cases}\]
 
 \subsubsection{Bestimmung des Innendurchmessers Drehfeldmaschine}
-\symbolbox{\begin{center}
-$C = \frac{\pi^2}{\sqrt{2}}\cdot\overline{A}_1\cdot \hat B_{\delta (1)}\cdot\xi_{1(1)}$
-\end{center}}
+\begin{symbolbox}
+	\begin{center}
+		$C = \frac{\pi^2}{\sqrt{2}}\cdot\overline{A}_1\cdot \hat B_{\delta (1)}\cdot\xi_{1(1)}$
+	\end{center}
+\end{symbolbox}
 $\overline A_1 = \frac{I_1\cdot 2w_1\cdot m}{\pi\cdot D_\delta}$\\
 \[D_i = \sqrt[3]{\frac{2p\cdot P_{SN}}{\lambda\pi\cdot C\cdot n_s}}\]
 
 \subsubsection{Bestimmung des Außendurchmessers}
 \[D_{a,\text{max}} = D_i + \frac{\num{2.5}\cdot\overline{A}_1}{s_1\kappa_{N1}\cdot\left(1-\frac{\hat B_{\delta(1)}}{B_{Z1,\text{max}}}\right)} + \frac{\hat B_{\delta (1)}\cdot\tau_p}{B_{J1,\text{max}}}\]
-}
-\sectionbox{
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsection{Wicklungsschemata}
-\emphbox{$N = 2\cdot m\cdot p\cdot q = 2p\cdot Q$}
+\begin{emphbox}
+	$N = 2\cdot m\cdot p\cdot q = 2p\cdot Q$
+\end{emphbox}
 \begin{tabularx}{\columnwidth}{LX}
 	Schleifringläufer & $q_2 = q_1 \pm 1$\\
 	Käfigläufer & $N_2 = N_1 \pm 4p$
 \end{tabularx}
+
 \subsubsection{Grundbegriffe (vgl. Skript S. $\numrange{52}{55}$)}
-\tablebox{
-\begin{tabular*}{\columnwidth}{p{4,5cm}cc}
-\ctrule
+\begin{tablebox}{p{4,5cm}cc}
 Wicklungsschritt (Spulenweite in Stabzahlen) & $y_1$ & $\unitof{\si{1}}$\\
 Schaltschritt (Abstand Oberstab zu Unterstab) & $y_2$ & $\unitof{\si{1}}$\\
 Gesamtschritt & $y_\text{ges}$ & $\unitof{\si{1}}$\\
 Gangzahl & $m_g$ & $\unitof{\si{1}}$\\
 Zahl der Spulenseiten je Nut zueinander & $u$ & $\unitof{\si{1}}$\\
 Zahl paralleler Ankerstromzweige & $2\cdot Z_{pS}$ & $\unitof{\si{1}}$\\
-\cbrule
-\end{tabular*}
-}
+\end{tablebox}
 
 \begin{tabularx}{\columnwidth}{CC}
 $y_1 \approx \frac{Z_K}{2p}$ & $W_\text{Sp} = \frac{y_1}{u}$
@@ -106,8 +110,9 @@ Symmetriebedingungen & $\frac{p}{Z_{pS}}, \frac{N}{Z_{pS}}, \frac{Z_K}{Z_{pS}}\i
 ungekreuzt & $y_\text{ges} = \frac{Z_K - Z_{pS}}{p})$\\
 gekreuzt & $y_\text{ges} = \frac{Z_K + Z_{pS}}{p})$
 \end{tabularx}
-}
-\sectionbox{
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsubsection{Wichtige Formeln}
 \begin{align*}
 w_1 &= \frac{2p\cdot q\cdot Z_N}{\text{Anzahl der Schichten}\cdot a} = \frac{N\cdot Z_N}{\text{Anzahl der Schichten}\cdot m\cdot a}\\
@@ -115,17 +120,14 @@ w_1 &= \frac{2p\cdot q\cdot Z_N}{\text{Anzahl der Schichten}\cdot a} = \frac{N\c
 w_\text{Sp} &= \frac{Z_N}{\text{Anzahl der Schichten}}\\
 \hat{\Phi}_{\delta(1)} &= \frac{2}{\pi}\cdot\hat{B}_{\delta(1)}\cdot\tau_p\cdot l_i\qquad\qquad\qquad\frac{U_1}{U_2} = \frac{w_2\cdot\xi_{2(1)}}{w_1\cdot\xi_{1(1)}}
 \end{align*}
-}
-\sectionbox{
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsubsection{Symmetriebedingungen}
-\tablebox{
-\begin{tabular*}{\columnwidth}{p{4,5cm}cc}
-\ctrule
+\begin{tablebox}{p{4,5cm}cc}
 Zeigerwinkel & $\alpha_Z$ & $\unitof{\si{\radian}}$\\
 Strangwinkel & $\alpha_\text{Str}$ & $\unitof{\si{\radian}}$\\
-\cbrule
-\end{tabular*}
-}
+\end{tablebox}
 
 \paragraph{Erste Symmetriebedingung}
 gleiche Spulenzahl je Strang\\
@@ -136,47 +138,52 @@ Zweischichtwicklung & $\frac{N}{m}\in\N$
 
 \paragraph{Zweite Symmetriebedingung}
 $\alpha_\text{Str}$ ganzzahliges Vielfaches von $\alpha_Z$\\
-\emphbox{$\alpha_Z = \frac{2\pi}{N}\cdot t ,\quad t = \ggT{N,p}$}
+\begin{emphbox}
+	$\alpha_Z = \frac{2\pi}{N}\cdot t ,\quad t = \ggT{N,p}$
+\end{emphbox}
 \begin{tabularx}{\columnwidth}{p{3cm}@{}lL}
 normale Mehrphasensysteme & $\alpha_\text{Str} = \frac{2\pi}{m}$ & $\frac{\alpha_\text{Str}}{\alpha_Z} = \frac{N}{m\cdot t}\in\N$\\
 reduzierte Mehrphasensysteme & $\alpha_\text{Str} = \frac{\pi}{m}$ & $\frac{\alpha_\text{Str}}{\alpha_Z} = \frac{N}{2\cdot m\cdot t}\in\N$
 \end{tabularx}
-}
-\sectionbox{
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsubsection{Nutstern}
-\cooknumbox{Nutstern}{
+\begin{cookbox}{Nutstern}
 \item Zeichne Zeigerkreis mit $N' = \frac{N}{t}$ Zeigerstrahlen (Abstand $\alpha_Z$)
 \item Beschriftung der Strahlen: 1 setzen und mit Zahlen von 2 bis $N'$ beschriften (Zwischen den Zeigern $\frac{p}{t}-1$ freilassen)
 \item $t$ Zeiger pro Zeigerstrahl und Schicht (Richtung: $+$ außen, $-$ innen)
 \item Zeigern einzeichnen nach Nutbelegungsplan
 \item Wiederhole Schritte 3 und 4 $t$ mal
-}
-}
-\sectionbox{
-\subsubsection{Wicklungsfaktor (vgl \ref{subsec:wickl}) (vgl. Ü2, Skript S. $\numrange{64}{70},93$)}
+\end{cookbox}
+\end{sectionbox}
+
+\begin{sectionbox}
+\subsubsection{Wicklungsfaktor (vgl.~\ref{subsec:wickl}) (vgl. Ü2, Skript S. $\numrange{64}{70},93$)}
 \begin{tabularx}{\columnwidth}{lX}
 $W_\text{Sp}\text{(absolut)}$ & Rückleiter der Oberschicht um diesen Wert verdreht\\
 $W_\text{Sp}\text{(relativ)} = \frac{W_\text{Sp}}{\tau_p}$ & Rückleiter der Oberschicht um diesen Wert bezogen auf die Polteilung verdreht
 \end{tabularx}
 \[\xi_{SZ(\nu)} = \xi_{Z(\nu)}\cdot\xi_{S(\nu)} = \frac{\abs{Z}}{2\frac{\text{Spulen}}{\text{Strang}}}  = \frac{\abs{Z}}{q\cdot \abs{\text{Zeiger}}}\]
 $\abs{Z}$ Länge der resultierenden Strangzeigers (aus Nutstern bestimmen)
-\cookbox{$\xi_{SZ(\nu)}$ graphisch bestimmen}{
+\begin{cookbox}{$\xi_{SZ(\nu)}$ graphisch bestimmen}
 \item Vektorielles addieren $q$ Zeigern aus Nutstern mit Zeigernummen 1 bis $q$ mit Abstand $\nu$\\
 Formel: $\abs{Z} = \sum_{i=0}^{q-1} 1 + \nu\cdot i$
 \item Bestimme $\xi_{SZ(\nu)}$ über obige Formel
-}
-}
-\sectionbox{
+\end{cookbox}
+\end{sectionbox}
+
+\begin{sectionbox}
 \subsubsection{Bruchlochwicklung (vgl. Ü5, Skript S. $\numrange{71}{75}$)}
 $q = \frac{n}{e}$
 
-\cookbox{Tingleyplan}{
+\begin{cookbox}{Tingleyplan}
 \item Bilde Matrix mit $2p$ Zeilen und $e\cdot\frac{N}{2p}$ Spalten
 \item Zeilen abwechselnd mit $+$ und $-$ beschriften
 \item Spalten dritteln und mit $U,-W,V$ für Stränge beschriften
 \item Links oben 1 eintragen
 \item $e-1$ Felder freilassen und Plan mit Zahlen von 2 bis $N$ füllen
-}
+\end{cookbox}
 
 \paragraph{Beispiel für zweischichtige Bruchlochwicklung}\mbox{}\\
 $N = 18$, $p = 4$, $m = 3$, $W_\text{Sp} = 2$
@@ -194,10 +201,10 @@ $+$ & & & 15 & & & & 16 & & \\ \hline
 $-$ & &17 & & & & 18 & & & \\ \hline
 \end{tabularx}
 
-\cookbox{Nutbelegungsplan}{
+\begin{cookbox}{Nutbelegungsplan}
 \item Unterschicht mit Tingleyplan erstellen ($+ \triangleq \circ$ und $- \triangleq \times$)
 \item Oberschicht enthält Rückleiter um $W_\text{Sp}$ verschoben
-}
+\end{cookbox}
 
 \begin{minipage}{.5\columnwidth}
     \begin{center}
@@ -210,4 +217,4 @@ $-$ & &17 & & & & 18 & & & \\ \hline
     \end{center}
 \end{minipage}
 
-}
+\end{sectionbox}
